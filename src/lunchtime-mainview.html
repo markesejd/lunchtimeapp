@@ -174,7 +174,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <aside>
-        <lunchtime-room-side-list class="fade-in" items="[[rooms]]">
+        <lunchtime-room-side-list class="fade-in" rooms="[[rooms]]">
           Recent Rooms
         </lunchtime-room-side-list>
         <news-side-list class="fade-in" items="[[_slice(category.items, 0, 3)]]">
@@ -210,6 +210,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           value: [],
           notify: true
         },
+
+        room: Object,
 
         offline: Boolean,
 
