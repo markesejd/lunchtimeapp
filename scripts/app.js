@@ -56,15 +56,47 @@ myApp.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
       );
   }
 
-  $scope.addDriver = function(id) {
-      $http.get({
-        method: 'GET',
-        url: '/api/room/' + id
+  $scope.addVenue = function(id, venue) {
+      $http.post({
+        method: 'POST',
+        url: 'api/room/' + id + '/venue/' + venue,
+        headers: {
+            "X-UserId": $scope.user.email
+        }
       }).then(function successCallback(response) {
-          $scope.currentAdventure = response;
-          $scope.changePage('current');
+          //Good to go. 
         }, function errorCallback(response) {
-          alert('Error Locating Room');
+          alert('Error Adding Venue');
+        }
+      );
+  }
+
+  $scope.addTime = function(id, time) {
+      $http.post({
+        method: 'POST',
+        url: 'api/room/' + id + '/time/' + time.replace(':', '_'),
+        headers: {
+            "X-UserId": $scope.user.email
+        }
+      }).then(function successCallback(response) {
+          //Good to go. 
+        }, function errorCallback(response) {
+          alert('Error Adding Time');
+        }
+      );
+  }
+
+  $scope.addDriver = function(id) {
+      $http.post({
+        method: 'POST',
+        url: 'api/room/' + id + '/driver',
+        headers: {
+            "X-UserId": $scope.user.email
+        }
+      }).then(function successCallback(response) {
+          //Good to go. 
+        }, function errorCallback(response) {
+          alert('Error Adding Driver');
         }
       );
   }

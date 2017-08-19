@@ -67,7 +67,7 @@ namespace Omnom.Controllers
       room.Venues.Add(new VotableItem
       {
         Name = venue,
-        Voters = new List<string>()
+        Voters = new List<string>() { userId }
       });
 
       return new HttpResponseMessage(HttpStatusCode.Created);
@@ -130,7 +130,7 @@ namespace Omnom.Controllers
       room.Times.Add(new VotableItem
       {
         Name = time.Replace("_",":"),
-        Voters = new List<string>()
+        Voters = new List<string>() { userId }
       });
 
       return new HttpResponseMessage(HttpStatusCode.Created);
