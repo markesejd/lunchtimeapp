@@ -129,7 +129,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           loading="[[loading]]"
           offline="[[offline]]"
           failure="[[failure]]"
-          rooms="{{rooms}}"></lunchtime-mainview>
+          rooms="[[rooms]]"></lunchtime-mainview>
       <!-- article view -->
       <news-article
           name="article"
@@ -183,7 +183,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         },
 
         rooms: {
-            type: Object,
+            type: Array,
             computed: '_getRoomData()',
             notify: true
         },
@@ -203,7 +203,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       observers: [
         '_routePageChanged(routeData.page)',
         '_updateArticleHeadline(article.headline)',
-        '_updateDocumentTitle(page, category.title, articleHeadline, appTitle)'
+        '_updateDocumentTitle(page, category.title, articleHeadline, appTitle)',
+        '_getRoomData()'
       ],
 
       listeners: {
@@ -331,7 +332,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
       
       _parseRoomData: function(response) {
-          this.$.list.rooms.push(response.sampleRoom)
+          this.$.list.rooms = [];
+          response.forEach(function(room) {
+            this.$.list.rooms.push(room)
+          }, this);
       },
 
       _refreshData: function() {

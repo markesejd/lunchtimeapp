@@ -1,54 +1,60 @@
-{
-"sampleRoom":{
-    "name": "Sample Room",
-    "venueList":[{
-        "address":{
-            "street":"somewhere",
-            "city":"Derwood",
-            "state":"MD",
-            "zip":"20855"
-        },
-        "name":"Jumbo Jumbo",
-        "votes":[
-            "jwilson@dealeron.com",
-            "mdixon@dealeron.com",
-            "nrogers@dealeron.com"
-        ]
-    },{
-        "address":{
-            "street":"somewhere",
-            "city":"Derwood",
-            "state":"MD",
-            "zip":"20855"
-        },
-        "name":"Chipotle",
-        "votes":[
-            "jwilson@dealeron.com",
-            "mdixon@dealeron.com"
-        ]
-    }],
-    "driverList":[
-        "jwilson@dealeron.com",
-        "mdixon@dealeron.com"
-    ],
-    "times":[
-        {
+[
+    {
+      "sampleRoom": {
+        "name": "Sample Room",
+        "venueList": [
+          {
+            "address": {
+              "street": "somewhere",
+              "city": "Derwood",
+              "state": "MD",
+              "zip": "20855"
+            },
+            "name": "Jumbo Jumbo",
+            "votes": [
+              "jwilson@dealeron.com",
+              "mdixon@dealeron.com",
+              "nrogers@dealeron.com"
+            ]
+          },
+          {
+            "address": {
+              "street": "somewhere",
+              "city": "Derwood",
+              "state": "MD",
+              "zip": "20855"
+            },
+            "name": "Chipotle",
+            "votes": [
+              "jwilson@dealeron.com",
+              "mdixon@dealeron.com"
+            ]
+          }
+        ],
+        "driverList": [
+          "jwilson@dealeron.com",
+          "mdixon@dealeron.com"
+        ],
+        "times": [
+          {
             "time": "12:00",
-            "votes":[
-                "nrogers@dealeron.com"
+            "votes": [
+              "nrogers@dealeron.com"
             ]
-        },{
+          },
+          {
             "time": "12:30",
-            "votes":[
-                "mdixon@dealeron.com"
+            "votes": [
+              "mdixon@dealeron.com"
             ]
-        },{
+          },
+          {
             "time": "13:00",
-            "votes":[
-                "jwilson@dealeron.com"
+            "votes": [
+              "jwilson@dealeron.com"
             ]
-        }
-
-    ]
-}
-}
+          }
+        ]
+      }
+    }
+  ]
