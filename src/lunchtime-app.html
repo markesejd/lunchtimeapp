@@ -129,7 +129,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           loading="[[loading]]"
           offline="[[offline]]"
           failure="[[failure]]"
-          rooms="[[rooms]]"></lunchtime-mainview>
+          rooms="{{rooms}}"></lunchtime-mainview>
       <!-- article view -->
       <news-article
           name="article"
@@ -324,15 +324,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _getRoomData: function() {
-        this._fetch('data/sampleRoom.json', 
+        this.$.data._fetch('/data/sampleRoom.json', 
           function(response) {
-            this.set('rooms', this._parseRoomData(response));
+            this._parseRoomData(response);
           }.bind(this), 1);
       },
       
       _parseRoomData: function(response) {
-          var rooms = [];
-          rooms.push(response.sample-room)
+          this.$.list.rooms.push(response.sampleRoom)
       },
 
       _refreshData: function() {

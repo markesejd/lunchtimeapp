@@ -1,5 +1,6 @@
 {
 "sampleRoom":{
+    "name": "Sample Room",
     "venueList":[{
         "address":{
             "street":"somewhere",
