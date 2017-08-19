@@ -152,6 +152,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <news-list-featured-item item="[[_getFeaturedItem(category.items)]]">
         </news-list-featured-item>
 
+        
+
         <ul class="app-grid article-grid fade-in">
           <template is="dom-repeat" items="[[_slice(category.items, 1, 5)]]">
             <li>
@@ -171,9 +173,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <aside>
-        <div class="ad-container">
-          <news-iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&f=ifr"></news-iframe>
-        </div>
+          <lunchtime-room-side-list>
+            </lunchtime-room-side-list>
         <news-side-list class="fade-in" items="[[_slice(category.items, 0, 3)]]">
           Most Read
         </news-side-list>
