@@ -71,6 +71,21 @@ myApp.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
       );
   }
 
+  $scope.voteVenue = function(id, venue) {
+      $http.post({
+        method: 'POST',
+        url: 'api/room/' + id + '/venue/' + venue + '/vote',
+        headers: {
+            "X-UserId": $scope.user.email
+        }
+      }).then(function successCallback(response) {
+          //Good to go. 
+        }, function errorCallback(response) {
+          alert('Error Voting Venue');
+        }
+      );
+  }
+
   $scope.addTime = function(id, time) {
       $http.post({
         method: 'POST',
@@ -82,6 +97,21 @@ myApp.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
           //Good to go. 
         }, function errorCallback(response) {
           alert('Error Adding Time');
+        }
+      );
+  }
+
+  $scope.voteTime = function(id, time) {
+      $http.post({
+        method: 'POST',
+        url: 'api/room/' + id + '/time/' + time.replace(':', '_') + '/vote',
+        headers: {
+            "X-UserId": $scope.user.email
+        }
+      }).then(function successCallback(response) {
+          //Good to go. 
+        }, function errorCallback(response) {
+          alert('Error Voting Time');
         }
       );
   }
