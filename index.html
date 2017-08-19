@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Omnon - Whats for lunch?</title>
+    <title>Omnom - Whats for lunch?</title>
 
 
 
@@ -23,7 +23,7 @@
 <body ng-controller="MainCtrl">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Omnon</a>
+        <a class="navbar-brand" href="#">Omnom</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
         <div class="row">
 
             <div class="col-lg-3 hide-sm">
-                <h1 class="my-4">Omnon</h1>
+                <h1 class="my-4">Omnom</h1>
                 <div class="list-group">
                     <a ng-click="changePage('start')" href class="list-group-item active">Start Advenrture</a>
                     <a ng-click="changePage('ongoing')" href class="list-group-item">Current Adventures</a>
@@ -62,23 +62,23 @@
                 <div class="card mt-4">
                     <img class="card-img-top img-fluid" src="./images/logo.jpg" alt="">
                     <div class="card-body">
-                        <form>
+                        <form ng-submit="createAdventure()">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                                <input type="text" class="form-control" id="firstName" model="firstName" placeholder="First Name">
                             </div>
                             <div class="form-group">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                                <input type="text" class="form-control" id="lastName" model="lastName" placeholder="Last Name">
                             </div>
                             <div class="form-group">
                                 <label for="emailInput">Email address</label>
-                                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                                <input type="email" class="form-control" id="emailInput" model="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleSelect2">What time(s) are you available for</label>
-                                <select multiple class="form-control" id="exampleSelect2">
+                                <select multiple class="form-control" id="exampleSelect2" model="timeOptions">
                                             <option>12</option>
                                             <option>12:30</option>
                                             <option>1</option>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="venueOptions">Example textarea</label>
-                                <textarea class="form-control" id="venueOptions" rows="3"></textarea>
+                                <textarea class="form-control" id="venueOptions" model="venueOptions" rows="3"></textarea>
                                 <small id="optionsHelp" class="form-text text-muted">Enter lunch options, comma seperated</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
