@@ -29,6 +29,25 @@
     "driver-list":[
         "jwilson@dealeron.com",
         "mdixon@dealeron.com"
+    ],
+    "times":[
+        {
+            "time": "12:00",
+            "votes":[
+                "nrogers@dealeron.com"
+            ]
+        },{
+            "time": "12:30",
+            "votes":[
+                "mdixon@dealeron.com"
+            ]
+        },{
+            "time": "13:00",
+            "votes":[
+                "jwilson@dealeron.com"
+            ]
+        }
+
     ]
 }
 }
