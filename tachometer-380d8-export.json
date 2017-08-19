@@ -1,0 +1,34 @@
+{
+"sample-room":{
+    "venue-list":[{
+        "address":{
+            "street":"somewhere",
+            "city":"Derwood",
+            "state":"MD",
+            "zip":"20855"
+        },
+        "name":"Jumbo Jumbo",
+        "votes":[
+            "jwilson@dealeron.com",
+            "mdixon@dealeron.com",
+            "nrogers@dealeron.com"
+        ]
+    },{
+        "address":{
+            "street":"somewhere",
+            "city":"Derwood",
+            "state":"MD",
+            "zip":"20855"
+        },
+        "name":"Chipotle",
+        "votes":[
+            "jwilson@dealeron.com",
+            "mdixon@dealeron.com"
+        ]
+    }],
+    "driver-list":[
+        "jwilson@dealeron.com",
+        "mdixon@dealeron.com"
+    ]
+}
+}
