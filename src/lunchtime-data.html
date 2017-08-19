@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<dom-module id="news-data">
+<dom-module id="lunchtime-data">
 
   <script>
 
@@ -20,19 +20,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       {name: 'about', title: 'About'},
       {name: 'activelunches', title: 'Current Lunches'},
       {name: 'pastlunches', title: 'Past Lunches'},
-      {name: 'top_stories', title: 'Top Stories'},
-      /**{name: 'doodles', title: 'Doodles'},
-      {name: 'chrome', title: 'Chrome'},
-      {name: 'search', title: 'Search'},
-      {name: 'shopping_payments', title: 'Shopping & Payments'},
-      {name: 'nonprofits', title: 'Nonprofits'}**/
+      {name: 'top_stories', title: 'Top Stories'}
     ];
 
     var textarea = document.createElement('textarea');
 
     Polymer({
 
-      is: 'news-data',
+      is: 'lunchtime-data',
 
       properties: {
 
@@ -42,6 +37,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           readOnly: true,
           notify: true
         },
+
+        
 
         categoryName: String,
 
@@ -79,6 +76,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         '_fetchCategory(category, offline)',
         '_fetchArticle(article, offline)'
       ],
+
 
       _computeArticle: function(categoryItems, articleId) {
         for (var i = 0; i < categoryItems.length; ++i) {

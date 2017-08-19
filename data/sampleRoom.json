@@ -1,6 +1,6 @@
 {
-"sample-room":{
-    "venue-list":[{
+"sampleRoom":{
+    "venueList":[{
         "address":{
             "street":"somewhere",
             "city":"Derwood",
@@ -26,7 +26,7 @@
             "mdixon@dealeron.com"
         ]
     }],
-    "driver-list":[
+    "driverList":[
         "jwilson@dealeron.com",
         "mdixon@dealeron.com"
     ],

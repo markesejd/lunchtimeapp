@@ -17,7 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="news-list-item.html">
 <link rel="import" href="news-side-list.html">
 
-<dom-module id="news-list">
+<dom-module id="lunchtime-mainview">
 
   <template>
 
@@ -173,8 +173,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <aside>
-          <lunchtime-room-side-list>
-            </lunchtime-room-side-list>
+        <lunchtime-room-side-list class="fade-in" rooms="[[_slice(rooms, 0, 5)]]">
+          Recent Rooms
+        </lunchtime-room-side-list>
         <news-side-list class="fade-in" items="[[_slice(category.items, 0, 3)]]">
           Most Read
         </news-side-list>
@@ -195,13 +196,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
 
-      is: 'news-list',
+      is: 'lunchtime-mainview',
 
       properties: {
 
         route: Object,
 
         category: Object,
+
+        rooms: Object,
 
         offline: Boolean,
 

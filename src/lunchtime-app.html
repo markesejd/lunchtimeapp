@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/app-route/app-route.html">
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 
-<link rel="import" href="news-data.html">
+<link rel="import" href="lunchtime-data.html">
 <link rel="import" href="news-nav.html">
 
 <dom-module id="lunchtime-app">
@@ -83,8 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     </style>
 
-    <news-analytics key="UA-39334307-18"></news-analytics>
-
+    
     <!--
       app-location and app-route elements provide the state of the URL for the app.
     -->
@@ -96,9 +95,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}"></app-route>
 
     <!--
-      news-data provides the list of categories and the articles for the category.
+      lunchtime-data provides the list of past rooms
     -->
-    <news-data
+    <lunchtime-data
         id="data"
         categories="{{categories}}"
         category-name="[[categoryName]]"
@@ -107,7 +106,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         article="{{article}}"
         loading="{{loading}}"
         offline="[[offline]]"
-        failure="{{failure}}"></news-data>
+        failure="{{failure}}"></lunchtime-data>
 
     <news-nav
         id="nav"
@@ -120,8 +119,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </news-nav>
 
     <iron-pages role="main" selected="[[page]]" attr-for-selected="name" fallback-selection="path-warning">
-      <!-- list view of articles in a category -->
-      <news-list
+      <!-- list view of pasat rooms -->
+      <lunchtime-mainview
           id="list"
           name="list"
           route="[[subroute]]"
@@ -129,7 +128,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           category="[[category]]"
           loading="[[loading]]"
           offline="[[offline]]"
-          failure="[[failure]]"></news-list>
+          failure="[[failure]]"
+          rooms="[[rooms]]"></lunchtime-mainview>
       <!-- article view -->
       <news-article
           name="article"
@@ -180,6 +180,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         articleHeadline: {
           type: String,
           value: ''
+        },
+
+        rooms: {
+            type: Object,
+            computed: '_getRoomData()',
+            notify: true
         },
 
         offline: {
@@ -238,7 +244,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged: function(page) {
         if (!page) {
           // set default route if route path is empty
-          this.set('route.path', 'list/top_stories');
+          this.set('route.path', 'list/activelunches');
           return;
         }
         this.page = page;
@@ -254,7 +260,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         switch(page) {
           case 'list':
-            href = 'news-list.html';
+            href = 'lunchtime-mainview.html';
           break;
           case 'article':
             href = 'news-article.html';
@@ -317,8 +323,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         document.title = (page === 'list' ? categoryTitle : articleHeadline) + ' - ' + appTitle;
       },
 
+      _getRoomData: function() {
+        this._fetch('data/sampleRoom.json', 
+          function(response) {
+            this.set('rooms', this._parseRoomData(response));
+          }.bind(this), 1);
+      },
+      
+      _parseRoomData: function(response) {
+          var rooms = [];
+          rooms.push(response.sample-room)
+      },
+
       _refreshData: function() {
         this.$.data.refresh();
+        this._getRoomData();
       }
 
     });

@@ -2,7 +2,7 @@
   "entrypoint": "index.html",
   "shell": "src/lunchtime-app.html",
   "fragments": [
-    "src/news-list.html",
+    "src/lunchtime-mainview.html",
     "src/news-article.html",
     "src/news-path-warning.html",
     "src/lazy-resources.html"
