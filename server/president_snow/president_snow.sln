@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C0695313-31B0-47CD-9C36-FDE89799BC90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1244640A-394B-4324-8867-DE6C9AB4D0A6}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "president_snow", "src\president_snow\president_snow.xproj", "{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2DFA5E1-EA73-48FB-B97A-835D5BDDB9CD} = {C0695313-31B0-47CD-9C36-FDE89799BC90}
+	EndGlobalSection
+EndGlobal
